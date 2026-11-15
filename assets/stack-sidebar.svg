@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="246" viewBox="0 0 320 246" role="img" aria-labelledby="title desc">
+  <title id="title">技术栈 · Technology Stack</title>
+  <desc id="desc">和参考主页相同的两列四排：Claude Code、Codex、C++、Qt、Python、SQL、LangChain、LangGraph</desc>
+  <style>
+    .card { fill: #f6f8fa; stroke: #d1d9e0; stroke-width: 1; }
+    .title { fill: #24292f; }
+    .icon-shape { fill: currentColor; }
+    @media (prefers-color-scheme: dark) {
+      .card { fill: #161b22; stroke: #30363d; }
+      .title { fill: #e6edf3; }
+    }
+  </style>
+  <g transform="translate(15 5)" style="color:#e49a7d">
+    <rect class="card" width="140" height="56" rx="9"/>
+    <rect x="9" y="13" width="30" height="30" rx="7" fill="#e49a7d" fill-opacity=".12"/>
+    <g class="icon-shape" transform="translate(12 15)"><path d="M12 0L14.6 8.1L22 4L17.9 11.4L26 14L17.9 16.6L22 24L14.6 19.9L12 28L9.4 19.9L2 24L6.1 16.6L-2 14L6.1 11.4L2 4L9.4 8.1Z"/></g>
+    <text x="47" y="33" class="title" font-size="12.5" font-weight="650" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif">Claude Code</text>
+  </g>
+  <g transform="translate(165 5)" style="color:#70d8c8">
+    <rect class="card" width="140" height="56" rx="9"/>
+    <rect x="9" y="13" width="30" height="30" rx="7" fill="#70d8c8" fill-opacity=".12"/>
+    <g transform="translate(13 16)" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M2 3L11 11L2 19M13 19H23"/></g>
+    <text x="47" y="33" class="title" font-size="14" font-weight="650" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif">Codex</text>
+  </g>
+  <g transform="translate(15 66)" style="color:#69a7ff">
+    <rect class="card" width="140" height="56" rx="9"/>
+    <rect x="9" y="13" width="30" height="30" rx="7" fill="#69a7ff" fill-opacity=".12"/>
+    <g transform="translate(13 16)"><circle cx="12" cy="12" r="12" fill="currentColor" opacity=".17"/><text x="12" y="16.5" text-anchor="middle" font-size="13" font-weight="800" fill="currentColor" font-family="Arial,sans-serif">C++</text></g>
+    <text x="47" y="33" class="title" font-size="14" font-weight="650" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif">C++</text>
+  </g>
+  <g transform="translate(165 66)" style="color:#6cdc79">
+    <rect class="card" width="140" height="56" rx="9"/>
+    <rect x="9" y="13" width="30" height="30" rx="7" fill="#6cdc79" fill-opacity=".12"/>
+    <g transform="translate(13 16)"><rect x="0" y="1" width="24" height="22" rx="4" fill="currentColor" opacity=".18"/><text x="12" y="16" text-anchor="middle" font-size="13" font-weight="800" fill="currentColor" font-family="Arial,sans-serif">Qt</text></g>
+    <text x="47" y="33" class="title" font-size="14" font-weight="650" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif">Qt</text>
+  </g>
+  <g transform="translate(15 127)" style="color:#e8c56b">
+    <rect class="card" width="140" height="56" rx="9"/>
+    <rect x="9" y="13" width="30" height="30" rx="7" fill="#e8c56b" fill-opacity=".12"/>
+    <g transform="translate(14 16)"><path d="M4 11V5C4 2 6 1 12 1H16C21 1 22 3 22 6V12H11C8 12 6 14 6 17V23H3C1 23 0 21 0 18V15C0 12 1 11 4 11Z" fill="#5c9bd8"/><path d="M20 13V19C20 22 18 23 12 23H8C3 23 2 21 2 18V12H13C16 12 18 10 18 7V1H21C23 1 24 3 24 6V9C24 12 23 13 20 13Z" fill="#e7bf5b"/><circle cx="9" cy="5" r="1.3" fill="#f8fbfd"/><circle cx="15" cy="19" r="1.3" fill="#23313b"/></g>
+    <text x="47" y="33" class="title" font-size="14" font-weight="650" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif">Python</text>
+  </g>
+  <g transform="translate(165 127)" style="color:#b3a1f2">
+    <rect class="card" width="140" height="56" rx="9"/>
+    <rect x="9" y="13" width="30" height="30" rx="7" fill="#b3a1f2" fill-opacity=".12"/>
+    <g transform="translate(14 15)" fill="none" stroke="currentColor" stroke-width="1.7"><ellipse cx="12" cy="5" rx="9.5" ry="3.5"/><path d="M2.5 5V20C2.5 25 21.5 25 21.5 20V5M2.5 12C2.5 17 21.5 17 21.5 12M2.5 19C2.5 24 21.5 24 21.5 19"/></g>
+    <text x="47" y="33" class="title" font-size="14" font-weight="650" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif">SQL</text>
+  </g>
+  <g transform="translate(15 188)" style="color:#78d5c5">
+    <rect class="card" width="140" height="56" rx="9"/>
+    <rect x="9" y="13" width="30" height="30" rx="7" fill="#78d5c5" fill-opacity=".12"/>
+    <g transform="translate(15 18)" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M10 3L14 -1C17 -4 22 1 19 4L13 10M11 14L7 18C4 21 -1 16 2 13L8 7M7 12L15 5"/></g>
+    <text x="47" y="33" class="title" font-size="12.7" font-weight="650" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif">LangChain</text>
+  </g>
+  <g transform="translate(165 188)" style="color:#a8b2f5">
+    <rect class="card" width="140" height="56" rx="9"/>
+    <rect x="9" y="13" width="30" height="30" rx="7" fill="#a8b2f5" fill-opacity=".12"/>
+    <g transform="translate(14 15)" stroke="currentColor" stroke-width="1.8" fill="none"><path d="M5 5L18 6L20 19L7 20Z"/><circle cx="5" cy="5" r="3.3" fill="currentColor"/><circle cx="18" cy="6" r="3.3" fill="currentColor"/><circle cx="20" cy="19" r="3.3" fill="currentColor"/><circle cx="7" cy="20" r="3.3" fill="currentColor"/></g>
+    <text x="47" y="33" class="title" font-size="12.7" font-weight="650" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif">LangGraph</text>
+  </g>
+</svg>
