@@ -30,7 +30,7 @@ PrineHarry · GitHub Profile README
 
 <p align="right">
   <!-- 以后把「待填写」改为本人希望公开展示的联系方式。 -->
-  <strong>微信：</strong><code>待填写</code>
+  <strong>STAR：</strong><code>FORWARD</code>
 </p>
 
 ---
