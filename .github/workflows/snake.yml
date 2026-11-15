@@ -1,0 +1,95 @@
+name: Update contribution snake
+
+on:
+  schedule:
+    # 与参考主页相同：北京时间每天 08:17（UTC 00:17）
+    - cron: "17 0 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/snake.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: contribution-snake
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - name: Generate light and dark snake animations
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3.5.0
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      - name: Publish generated SVGs to output branch
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        with:
+          script: |
+            const fs = require('node:fs');
+            const { owner, repo } = context.repo;
+            const branch = 'output';
+            const filenames = [
+              'github-contribution-grid-snake.svg',
+              'github-contribution-grid-snake-dark.svg',
+            ];
+            const treeFiles = filenames.map((path) => ({
+              path,
+              mode: '100644',
+              type: 'blob',
+              content: fs.readFileSync(`dist/${path}`, 'utf8'),
+            }));
+
+            let oldHead = null;
+            let oldTree = null;
+            try {
+              const response = await github.rest.git.getRef({
+                owner, repo, ref: `heads/${branch}`,
+              });
+              oldHead = response.data.object.sha;
+              const previous = await github.rest.git.getCommit({
+                owner, repo, commit_sha: oldHead,
+              });
+              oldTree = previous.data.tree.sha;
+            } catch (error) {
+              if (error.status !== 404) throw error;
+            }
+
+            const response = await github.rest.git.createTree({
+              owner, repo,
+              ...(oldTree ? {base_tree: oldTree} : {}),
+              tree: treeFiles,
+            });
+            if (response.data.sha === oldTree) {
+              core.info('Contribution images already up to date.');
+              return;
+            }
+            const created = await github.rest.git.createCommit({
+              owner, repo,
+              message: 'chore: refresh contribution snake [skip ci]',
+              tree: response.data.sha,
+              parents: oldHead ? [oldHead] : [],
+            });
+            if (oldHead) {
+              await github.rest.git.updateRef({
+                owner, repo, ref: `heads/${branch}`,
+                sha: created.data.sha, force: false,
+              });
+            } else {
+              await github.rest.git.createRef({
+                owner, repo, ref: `refs/heads/${branch}`,
+                sha: created.data.sha,
+              });
+            }
+            core.info(`Contribution snake published: ${created.data.sha}`);
